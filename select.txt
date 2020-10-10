@@ -1,0 +1,373 @@
+            $q = $this->db->query("select * from `categories` WHERE id=".$id);
+            $q = $this->db->query("select * from `header_categories` WHERE id=".$id);
+             $ct1  = $this->db->query("select * from products where product_id='$prod_id'");
+                    //  $ctt = $this->db->query("select * from products");
+           $ct1  = $this->db->query("select * from products where product_id='$prod_id'");
+                    //  $ctt = $this->db->query("select * from products");
+                $ct  = $this->db->query("select * from products");
+            $ct  = $this->db->query("select * from `city`");
+                    $this->db->select('user_password'); // Change it to what column name you have for id
+            $q = $this->db->query("select * from `language_setting` WHERE id=1");
+            $q = $this->db->query("select * from `language_setting` WHERE id=1");
+        $this->db->select('*');
+            $this->db->select('*');
+            $this->db->select('*');
+                    $q = $this->db->query("select * from registers where user_id = '".$this->input->post("user_id")."' and  user_password = '".md5($this->input->post("current_password"))."' limit 1");
+                     $ld = $this->db->query("select user_location.*, socity.* from user_location
+                    $this->db->select('*');
+            $this->db->select('*');
+            $this->db->select('*');
+         $q = $this->db->query("select * from `pageapp` WHERE id =1"); 
+         $q = $this->db->query("select * from `pageapp` where id=2"); 
+         $q = $this->db->query("select * from `pageapp` where id=3"); 
+        $q = $this->db->query("select * from `pageapp` where id=4");
+                $select= $this->db->query("SELECT * from rewards where id=1");
+                if ($select->num_rows() > 0)
+                       $row = $select->row_array(); 
+            $q = $this->db->query("select p.*,dp.start_date,dp.start_time,dp.end_time,dp.deal_price,c.title,count(si.product_id) as top,si.product_id from products p 
+        //$q = $this->db->query("select p.*,dp.start_date,dp.start_time,dp.end_time,dp.deal_price,c.title,count(si.product_id) as top,si.product_id from products p INNER join //sale_items si on p.product_id=si.product_id INNER join categories c ON c.id=p.category_id left join deal_product dp on dp.product_id=si.product_id GROUP BY si.product_id //order by top DESC LIMIT 8");
+            left outer join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+            left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
+            left outer join (select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+            left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
+            $q = $this->db->query("select * from `coupons`"); 
+            $q = $this->db->query("select id,user_name from `delivery_boy` where user_status=1");
+                    $this->db->select('*');
+                         $data["data"] = 'Please select the product';
+                    $cart_detail = $this->db->query("select * from cart where cart_id = '".$id."'");
+                    $cart_productr = $this->db->query("select * from cart where user_id = '".$this->input->post("user_id")."'");
+                          $this->db->select('user_id, user_fullname, user_image');
+                            left join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+                            left join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id 
+                $this->db->select('*');
+                    $cart_productr = $this->db->query("select * from cart where user_id = '".$this->input->post("user_id")."'");
+                     $ld = $this->db->query("select * from user_location where location_id = '".$this->input->post("location")."' limit 1");
+                     $cart= $this->db->query("select * from cart WHERE user_id='".$user_id."'");
+                          left outer join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+                          left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
+                    $store_detail=$this->db->query("select * from store_login where user_id = '".$store_id."'");
+        $item_id = $this->db->query("select * from sale_items where sale_id =".$id);
+                $sale_items = $this->db->query("select * from sale_items where sale_id =".$order_id);
+                            $order= $this->db->query("select * from sale where sale_id =".$order_id);
+                          $store= $this->db->query("select user_id, user_fullname, user_image from store_login where user_id =".$store_id);
+            left join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+            left join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id 
+                $complain = $this->db->query("select * from complain");
+         $product = $this->db->query("select * from  sale_items where sale_id =".$sale_id );
+             $user = $this->db->query("select * from  registers where user_id =".$user_id );
+                $product = $this->db->query("select * from  products where product_id =".$product_id );  
+                $complain = $this->db->query("select * from  complain where complain_id =".$complain_id );  
+        $this->db->select('*');
+                    $this->db->select('*');
+            $this->db->select('*');
+            $this->db->select('*');
+            $this->db->select('*');
+            $this->db->select('*');
+            $result = $thi->db->query("select * from user_type_access where user_type_id = '".$user_type_id."' and class = '".$cur_class."' and (method = '".$cur_method."' or method='*')");
+                    $q = $this->db->query("select * from `categories` where id=".$parentid);
+                    $q = $this->db->query("select * from `categories` where id=".$parentid);
+                    $q = $this->db->query("select * from `header_categories` where id=".$parentid);
+           // $q = $this->db->query("select * from `categories` order by id DESC ");
+           // $q = $this->db->query("select * from `categories` order by id DESC ");
+            $q = $this->db->query("select * from `categories`  ");
+            $q = $this->db->query("select categories.title, business_category.bus_id as bcid, business_category.category_id from `business_category` INNER JOIN categories ON categories.id = business_category.category_id WHERE business_category.bus_id =".$id);
+            $q = $this->db->query("select * from `pageapp` "); 
+            $q = $this->db->query("select * from `pageapp` WHERE id = ".$id);
+            left outer join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+            left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
+            left outer join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+            left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
+            left outer join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = header_products.product_id 
+            left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = header_products.product_id
+            left outer join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+            left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
+        $this->db->select('*');
+        $this->db->select('*')->from('products'); 
+        $this->db->select('*')->from('categories'); 
+        $this->db->select('*')->from('categories'); 
+        left outer join(select SUM(qty) as c_qty,product_id from sale_items group by product_id) as consuption on consuption.product_id = products.product_id 
+            left outer join(select SUM(qty) as p_qty,product_id from purchase group by product_id) as producation on producation.product_id = products.product_id
+          $this->db->select('*');
+        $this->db->select('*');
+            $q = $this->db->query("select * from slider where id ='".$id."' limit 0,1");
+            $q = $this->db->query("select * from banner where id ='".$id."' limit 0,1");
+            $q = $this->db->query("select * from feature_slider where id ='".$id."' limit 0,1");
+            $q = $this->db->query("select * from slider where slider_status = 1");
+        $q = $this->db->query("select * from users where 1 ".$filter);
+        $q = $this->db->query("select * from store_login ");
+         $this->db->select('*');
+        // $q = $this->db->query("select * from 'products' where 'product_id',$prod_id");
+             $this->db->select('*');
+            $this->db->select('admin_share, SUM(admin_share) AS Admin_Share', FALSE);
+           $this->db->select('amount, SUM(amount) AS amt', FALSE);
+         $this->db->select('*');
+         $this->db->select('*');
+        // $q = $this->db->query("select * from 'products' where 'product_id',$prod_id");
+            $this->db->select('amount, SUM(amount) AS AMOUNT', FALSE);
+         $this->db->select('*');
+        // $q = $this->db->query("select * from 'products' where 'product_id',$prod_id");
+         $this->db->select('*');
+            $this->db->select('admin_share, SUM(admin_share) AS Admin_Share', FALSE);
+           $this->db->select('amount, SUM(amount) AS amt', FALSE);
+            $this->db->select('*');
+            $this->db->select('*');
+            $this->db->select('*');
+         $this->db->select('*');
+            $this->db->select('admin_share, SUM(admin_share) AS Admin_Share', FALSE);
+           $this->db->select('amount, SUM(amount) AS amt', FALSE);
+            $this->db->select('amount, SUM(amount) AS AMOUNT', FALSE);
+            $this->db->select('amount, SUM(amount) AS total', FALSE);
+        $q = $this->db->query("select * from store_login where  user_id = '".$id."' limit 1");
+        $q = $this->db->query("select * from users where  user_id = '".$id."' limit 1");
+        $q = $this->db->query("select * from user_types");
+        $q = $this->db->query("select * from user_types where user_type_id = '".$id."'");
+        $q = $this->db->query("select * from user_type_access where user_type_id = '".$type_id."'");
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url($this->config->item("theme_admin")."/plugins/select2/select2.min.css"); ?>">
+                                    <select class="form-control select2" name="user_type_id" id="user_type_id" style="width: 100%;">
+                                    </select>
+    <script src="<?php echo base_url($this->config->item("theme_admin")."/plugins/select2/select2.full.min.js"); ?>"></script>
+       $(".select2").select2();
+       $(".select3").select2();
+       $(".select4").select2();
+                    $(".select3").select2();
+                    $(".select4").select2();
+    <link rel="stylesheet" href="<?php echo base_url($this->config->item("theme_admin")."/plugins/select2/select2.min.css"); ?>">
+    <script src="<?php echo base_url($this->config->item("theme_admin")."/plugins/select2/select2.full.min.js"); ?>"></script>
+       $(".select2").select2();
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="slider_status">
+                                            </select>
+                                                <select class="text-input form-control" name="sub_cat">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                </select>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                </select>
+                                                        <select class="text-input form-control" name="sub_cat">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                        </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="slider_status">
+                                                <option value="1" <?php if($slider->slider_status=="1"){echo "selected";} ?>> <?php echo $this->lang->line("Active");?>  </option>
+                                                <option value="0" <?php if($slider->slider_status=="0"){echo "selected";} ?>> <?php echo $this->lang->line("DeActive");?>  </option>
+                                            </select>
+                                                <select class="text-input form-control" name="sub_cat">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                </select>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                        <option value="1" <?php if($slider->slider_status=="1"){echo "selected";} ?>> <?php echo $this->lang->line("Active");?>  </option>
+                                                        <option value="0" <?php if($slider->slider_status=="0"){echo "selected";} ?>> <?php echo $this->lang->line("DeActive");?>  </option>
+                                                    </select>
+                                                        <select class="text-input form-control" name="sub_cat">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                        </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="parent">
+                                            </select>
+                                                    <select class="text-input form-control" name="parent">
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="parent">
+                                                     <option value="<?php echo $d->id; ?>" <?php if($getcat->parent == $d->id){ echo 'selected=""';} ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                            </select>
+                                                    <select class="form-control"  name="parent">
+                                                     <option value="<?php echo $d->id; ?>" <?php if($getcat->parent == $d->id){ echo 'selected=""';} ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="product_type" id="type">
+                                            </select>
+                                            <select class="text-input form-control" name="product_type" id="type" onchange="yesnoCheck(this);">
+                                            </select>
+                                                    <input type="radio" name="discount_type" id="optionsRadios1" value="1" onclick="yesselect();" />
+                                                    <input type="radio" name="discount_type" id="optionsRadios2" value="0" onclick="yesselect();"/>
+                                            function yesselect(that) {
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                <select class="text-input form-control" name="slider_status">
+                                                </select>
+                                                <select class="text-input form-control" name="sub_cat">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                </select>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                </select>
+                                                        <select class="text-input form-control" name="sub_cat">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                        </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="slider_status">
+                                                <option value="1" <?php if($slider->slider_status=="1"){echo "selected";} ?>> <?php echo $this->lang->line("Active");?>  </option>
+                                                <option value="0" <?php if($slider->slider_status=="0"){echo "selected";} ?>> <?php echo $this->lang->line("DeActive");?>  </option>
+                                            </select>
+                                                <select class="text-input form-control" name="sub_cat">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                </select>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                        <option value="1" <?php if($slider->slider_status=="1"){echo "selected";} ?>> <?php echo $this->lang->line("Active");?>  </option>
+                                                        <option value="0" <?php if($slider->slider_status=="0"){echo "selected";} ?>> <?php echo $this->lang->line("DeActive");?>  </option>
+                                                    </select>
+                                                        <select class="text-input form-control" name="sub_cat">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                        </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                        <option value="1" <?php if($slider->slider_status=='1'){ echo "selected"; } ?>> <?php echo $this->lang->line("Active");?>  </option>
+                                                        <option value="0" <?php if($slider->slider_status=='0'){ echo "selected"; } ?>> <?php echo $this->lang->line("Deactive");?>  </option>
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="parent">
+                                            </select>
+                                            <select class="text-input form-control" name="parent">
+                                                     <option value="<?php echo $d->id; ?>" <?php if($getcat->parent == $d->id){ echo 'selected=""';} ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                            </select>
+                                            <select class="text-input form-control" name="parent">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                            </select>
+                                            <select class="text-input form-control" name="parent">
+                                                       <option value="<?php echo $d->id; ?>" <?php if($product->category_id == $d->id){ echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                            </select>
+                                            <select name="unit" class="form-control" >
+                                                <option class="gram"  <?php echo ($price->unit == "gram") ? "selected" : ""; ?> >Gram</option>
+                                                <option class="kg" <?php echo ($price->unit == "kg") ? "selected" : ""; ?> >Kg</option>
+                                                <option class="nos" <?php echo ($price->unit == "nos") ? "selected" : ""; ?> >Nos</option>
+                                            </select>
+                                            <select class="form-control" name="product_id">
+                                                    <option value="<?php echo $product->product_id; ?>" <?php if($product->product_id == $purchase->product_id) { echo "selected"; } ?> ><?php echo $product->product_name; ?></option>
+                                            </select>
+                                            <select name="unit" class="form-control" >
+                                            </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="footer">
+                                            </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="parent">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                            </select>
+                                                    <select class="text-input form-control" name="parent">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select class="text-input form-control" name="parent">
+                                                       <option value="<?php echo $d->id; ?>" <?php if($product->category_id == $d->id){ echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                            </select>
+                                                    <select class="text-input form-control" name="parent">
+                                                               <option value="<?php echo $d->id; ?>" <?php if($product->category_id == $d->id){ echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select name="unit" class="form-control" >
+                                                <option class="gram"  <?php echo ($price->unit == "gram") ? "selected" : ""; ?> >Gram</option>
+                                                <option class="kg" <?php echo ($price->unit == "kg") ? "selected" : ""; ?> >Kg</option>
+                                                <option class="nos" <?php echo ($price->unit == "nos") ? "selected" : ""; ?> >Nos</option>
+                                            </select>
+                                            <select class="form-control" name="product_id">
+                                                    <option value="<?php echo $product->product_id; ?>" <?php if($product->product_id == $purchase->product_id) { echo "selected"; } ?> ><?php echo $product->product_name; ?></option>
+                                            </select>
+                                                    <select class="text-input form-control" name="product_id">
+                                                            <option value="<?php echo $product->product_id; ?>" <?php if($product->product_id == $purchase->product_id) { echo "selected"; } ?> >
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                            <select name="unit" class="form-control" >
+                                            </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                                <select class="form-control" name="society" style="margin-top: 25px;">
+                                                                    <option value="<?= $society->socity_id ?>" <?php if($society->socity_id==$user->socity_id){ echo "selected"; } ?>><?= $society->socity_name ?></option>
+                                                                </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                                <select class="form-control" name="society" style="margin-top: 25px;">
+                                                                    <option value="<?= $society->socity_id ?>" <?php if($society->socity_id==$user->socity_id){ echo "selected"; } ?>><?= $society->socity_name ?></option>
+                                                                </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                <select class="text-input form-control" name="slider_status">
+                                                </select>
+                                                <select class="text-input form-control" name="sub_cat">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                </select>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                </select>
+                                                        <select class="text-input form-control" name="sub_cat">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                        </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                <select class="text-input form-control" name="slider_status">
+                                                    <option value="1" <?php if($slider->slider_status=="1"){echo "selected";} ?>> <?php echo $this->lang->line("Active");?>  </option>
+                                                    <option value="0" <?php if($slider->slider_status=="0"){echo "selected";} ?>> <?php echo $this->lang->line("DeActive");?>  </option>
+                                                </select>
+                                                <select class="text-input form-control" name="sub_cat">
+                                                    <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                </select>
+                                                    <select class="text-input form-control" name="slider_status">
+                                                        <option value="1" <?php if($slider->slider_status=="1"){echo "selected";} ?>> <?php echo $this->lang->line("Active");?>  </option>
+                                                        <option value="0" <?php if($slider->slider_status=="0"){echo "selected";} ?>> <?php echo $this->lang->line("DeActive");?>  </option>
+                                                    </select>
+                                                        <select class="text-input form-control" name="sub_cat">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                        </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                    <select class="text-input form-control" name="parent">
+                                                            <option value="<?php echo $d->id; ?>" <?php if($d->parent == "0" && $d->leval == "0" && $bool){echo "disabled";} ?> <?php if(isset($_REQUEST["parent"]) && $_REQUEST["parent"]==$d->id){echo "selected"; } ?> ><?php for($i=0; $i<$d->leval; $i++){ echo "_"; } echo $d->title; ?></option>
+                                                    </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+                                                        <select name="interval" id="morning_interval"  class="form-control input-sm"  >
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 05) { echo "selected"; } ?> >05</option>
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 10) { echo "selected"; } ?> >10</option>
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 15) { echo "selected"; } ?> >15</option>
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 20) { echo "selected"; } ?> >20</option>
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 25) { echo "selected"; } ?> >25</option>
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 30) { echo "selected"; } ?> >30</option>
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 60) { echo "selected"; } ?> >30</option>
+                                                            <option <?php if(!empty($schedule) && $schedule->time_slot == 120) { echo "selected"; } ?> >30</option>
+                                                        </select>
+                                            <select name="interval" class="form-control timepicker">
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 05) { echo "selected"; } ?> >05</option>
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 10) { echo "selected"; } ?> >10</option>
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 15) { echo "selected"; } ?> >15</option>
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 20) { echo "selected"; } ?> >20</option>
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 25) { echo "selected"; } ?> >25</option>
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 30) { echo "selected"; } ?> >30</option>
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 60) { echo "selected"; } ?> >60</option>
+                                                <option <?php if(!empty($schedule) && $schedule->time_slot == 120) { echo "selected"; } ?> >120</option>
+                                            </select>
+<script src="<?php echo base_url($this->config->item("new_theme")."/assets/js/jquery.select-bootstrap.js"); ?>"></script>
+where people can select and purchase fresh kinds merely sitting at home.</p>
